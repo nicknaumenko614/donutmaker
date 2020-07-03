@@ -10,10 +10,12 @@ const autoClickerPriceElement = document.getElementById("autoClickerPrice");
 const purchaseMultiplierButton = document.getElementById("purchaseMultiplierButton");
 const purchasedMultipliersElement = document.getElementById("purchasedMultipliers");
 const multiplierPriceElement = document.getElementById("multiplierPrice");
+const resetAllButton = document.getElementById("resetAllButton");
 
 initClickerButton();
 initPurchaseAutoClickerButton();
 initPurchaseMultiplierButton();
+initResetButton()
 run();
 
 function initClickerButton() {
@@ -85,6 +87,19 @@ function initPurchaseMultiplierButton() {
             disableBtn("purchaseAutoClickerButton")
         }
     })
+}
+
+function initResetButton() {
+    resetAllButton.addEventListener('click', () => {
+        donutMaker.resetAll();
+
+        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
+        multiplierPriceElement.innerHTML = donutMaker.getMultiplierCost();
+        purchasedMultipliersElement.innerHTML = donutMaker.getMultipliersNumber();
+        autoClickerPriceElement.innerHTML = donutMaker.getAutoClickerCost();
+        purchasedAutoClickersElement.innerHTML = donutMaker.getAutoClickersNumber();
+    })
+
 }
 
 function enableBtn(buttonElementId) {

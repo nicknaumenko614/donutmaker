@@ -3,11 +3,7 @@ export {DonutMaker};
 class DonutMaker {
 
     constructor() {
-        this.clicksNumber = 0;
-        this.autoClickerCost = 10;
-        this.autoClickersNumber = 0;
-        this.multiplierCost = 10;
-        this.multipliersNumber = 0;
+        this.resetAll()
     }
 
     makeDonut() {
@@ -46,6 +42,14 @@ class DonutMaker {
         for (let i = 0; i < this.autoClickersNumber; i++) {
             this.makeDonut();
         }
+    }
+
+    resetAll() {
+        this.clicksNumber = 0;
+        this.autoClickerCost = 10;
+        this.autoClickersNumber = 0;
+        this.multiplierCost = 10;
+        this.multipliersNumber = 0;
     }
 
     getClicksNumber() {
