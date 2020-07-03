@@ -1,31 +1,20 @@
-const makeDonutButton = document.querySelector(".make-donut");
-const purchaseAutoClickerButton = document.querySelector(".auto-click")
-const purchaseDonutMultiplierButton = document.querySelector(".mulitiply-donut")
-const displayNumberOfDonuts = document.querySelector(".number-of-donuts");
-let numberOfDonuts = 0;
-let autoClickerPrice = 10;
-let numberOfPurchasedAutoClickers = 0;
+export {DonutMaker};
 
-makeDonutButton.addEventListener('click', () =>{
-makeDonut();
-displayNumberOfDonuts.innerHTML = numberOfDonuts;
-})
+class DonutMaker {
 
-function makeDonut () {
-numberOfDonuts+=1
-}
+    constructor() {
+        this.clicksNumber = 0;
+        this.autoClickerCost = 10;
+        this.autoClickerClicksNumber = 0;
+        this.multiplierCost = 10;
+        this.multiplierNumber = 0;
+    }
 
-purchaseAutoClickerButton.addEventListener('click', () =>{
+    makeDonut() {
+        this.clicksNumber += 1;
+    }
 
-})
-
-
-
- 
-function disableBtn(buttonName) {
-    document.getElementById(buttonName).disabled = true;
-}
-
-function enableBtn(buttonName) {
-    document.getElementById(buttonName).disabled = false;
+    getClicksNumber() {
+        return this.clicksNumber;
+    }
 }
