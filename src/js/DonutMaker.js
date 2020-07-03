@@ -7,7 +7,7 @@ class DonutMaker {
     }
 
     makeDonut() {
-        this.clicksNumber += 1 * this.calculateMultiplier();
+        this.clicksNumber += Math.round(1 * this.calculateMultiplier());
     }
 
     calculateMultiplier() {
@@ -31,11 +31,11 @@ class DonutMaker {
     }
 
     updateAutoClickerCost() {
-        this.autoClickerCost = this.autoClickerCost + this.autoClickerCost * 0.1;
+        this.autoClickerCost = Math.round(this.autoClickerCost + this.autoClickerCost * 0.1);
     }
 
     updateMultiplierCost() {
-        this.multiplierCost = this.multiplierCost + this.multiplierCost * 0.1;
+        this.multiplierCost = Math.round(this.multiplierCost + this.multiplierCost * 0.1);
     }
 
     startAutoClicking() {
@@ -46,9 +46,9 @@ class DonutMaker {
 
     resetAll() {
         this.clicksNumber = 0;
-        this.autoClickerCost = 10;
+        this.autoClickerCost = 100;
         this.autoClickersNumber = 0;
-        this.multiplierCost = 10;
+        this.multiplierCost = 100;
         this.multipliersNumber = 0;
     }
 
