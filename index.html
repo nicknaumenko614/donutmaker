@@ -31,14 +31,16 @@
             <button id="makeDonutButton" class="make-donut" type="button">
                 Make Donuts
             </button>
-            <p id="madeDonuts" class="number-of-donuts">number of donuts made</p>
+            <p>Number of made donuts: <a id="madeDonuts" class="number-of-donuts">0</a></p>
         </section>
 
         <section class="auto-click">
-            <button class="auto-click" type="button">
+            <button id="purchaseAutoClickerButton" class="auto-click" type="button" disabled>
                 Purchase an Auto Clicker
             </button>
-            <p class="number-of-auto-clicks">number of auto clickers</p>
+
+            <p>Number of purchased auto clickers: <a id="purchasedAutoClickers" class="number-of-auto-clicks">0</a></p>
+            <p>Price of auto clicker: <a id="autoClickerPrice" class="auto-clicker-price">0</a></p>
         </section>
 
         <section class="click-multiply">
@@ -51,8 +53,8 @@
 
     </div>
 
-    <script src="./src/js/DonutMaker.js" type = "module"></script>
-    <script src="./src/js/App.js" type = "module"></script>
+    <script src="./src/js/DonutMaker.js" type="module"></script>
+    <script src="./src/js/App.js" type="module"></script>
     </body>
 </div>
 </html>
