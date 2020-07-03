@@ -38,6 +38,12 @@ class DonutMaker {
         this.multiplierCost = this.multiplierCost + this.multiplierCost * 0.1;
     }
 
+    startAutoClicking() {
+        for (let i = 0; i < this.autoClickersNumber; i++) {
+            this.makeDonut();
+        }
+    }
+
     getClicksNumber() {
         return this.clicksNumber;
     }

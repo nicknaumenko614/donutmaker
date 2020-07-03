@@ -14,7 +14,7 @@ const multiplierPriceElement = document.getElementById("multiplierPrice");
 initClickerButton();
 initPurchaseAutoClickerButton();
 initPurchaseMultiplierButton();
-
+run();
 
 function initClickerButton() {
     madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
@@ -95,6 +95,27 @@ function disableBtn(buttonElementId) {
     document.getElementById(buttonElementId).disabled = true;
 }
 
+function run() {
+    window.setInterval(() => {
+        donutMaker.startAutoClicking();
+        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
 
+        if (donutMaker.getClicksNumber() >= donutMaker.getAutoClickerCost()) {
+            enableBtn("purchaseAutoClickerButton")
+        }
+
+        if (donutMaker.getClicksNumber() < donutMaker.getAutoClickerCost()) {
+            disableBtn("purchaseAutoClickerButton")
+        }
+
+        if (donutMaker.getClicksNumber() >= donutMaker.getMultiplierCost()) {
+            enableBtn("purchaseMultiplierButton")
+        }
+
+        if (donutMaker.getClicksNumber() < donutMaker.getMultiplierCost()) {
+            disableBtn("purchaseMultiplierButton")
+        }
+    }, 1000);
+}
 
 
