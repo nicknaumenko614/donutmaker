@@ -11,7 +11,11 @@ class DonutMaker {
     }
 
     makeDonut() {
-        this.clicksNumber += 1;
+        this.clicksNumber += 1 * this.calculateMultiplier();
+    }
+
+    calculateMultiplier() {
+        return Math.pow(1.2, this.multipliersNumber);
     }
 
     updateDonutsNumberAfterPurchaseAutoClicker() {
