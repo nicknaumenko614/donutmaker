@@ -25,21 +25,9 @@ function initClickerButton() {
         donutMaker.makeDonut();
         madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
 
-        if (donutMaker.getClicksNumber() >= donutMaker.getAutoClickerCost()) {
-            enableBtn("purchaseAutoClickerButton")
-        }
+        checkAutoClickerCapacity();
 
-        if (donutMaker.getClicksNumber() < donutMaker.getAutoClickerCost()) {
-            disableBtn("purchaseAutoClickerButton")
-        }
-
-        if (donutMaker.getClicksNumber() >= donutMaker.getMultiplierCost()) {
-            enableBtn("purchaseMultiplierButton")
-        }
-
-        if (donutMaker.getClicksNumber() < donutMaker.getMultiplierCost()) {
-            disableBtn("purchaseMultiplierButton")
-        }
+        checkMultiplierCapacity();
     });
 }
 
@@ -48,21 +36,11 @@ function initPurchaseAutoClickerButton() {
 
     purchaseAutoClickerButton.addEventListener('click', () => {
         donutMaker.updateDonutsNumberAfterPurchaseAutoClicker();
-        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
-
         donutMaker.updateNumberOfPurchasedAutoClickers();
-        purchasedAutoClickersElement.innerHTML = donutMaker.getAutoClickersNumber();
-
         donutMaker.updateAutoClickerCost();
-        autoClickerPriceElement.innerHTML = donutMaker.getAutoClickerCost();
-
-        if (donutMaker.getClicksNumber() < donutMaker.getAutoClickerCost()) {
-            disableBtn("purchaseAutoClickerButton")
-        }
-
-        if (donutMaker.getClicksNumber() < donutMaker.getMultiplierCost()) {
-            disableBtn("purchaseMultiplierButton")
-        }
+        updateAutoClickerFields();
+        checkAutoClickerCapacity();
+        checkMultiplierCapacity();
     });
 }
 
@@ -71,33 +49,19 @@ function initPurchaseMultiplierButton() {
 
     purchaseMultiplierButton.addEventListener('click', () => {
         donutMaker.updateDonutsNumberAfterPurchaseMultiplier();
-        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
-
         donutMaker.updateNumberOfPurchasedMultipliers();
-        purchasedMultipliersElement.innerHTML = donutMaker.getMultipliersNumber();
-
         donutMaker.updateMultiplierCost();
-        multiplierPriceElement.innerHTML = donutMaker.getMultiplierCost();
-
-        if (donutMaker.getClicksNumber() < donutMaker.getMultiplierCost()) {
-            disableBtn("purchaseMultiplierButton")
-        }
-
-        if (donutMaker.getClicksNumber() < donutMaker.getAutoClickerCost()) {
-            disableBtn("purchaseAutoClickerButton")
-        }
+        updateMultiplierFields();
+        checkMultiplierCapacity();
+        checkAutoClickerCapacity();
     })
 }
 
 function initResetButton() {
     resetAllButton.addEventListener('click', () => {
         donutMaker.resetAll();
-
-        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
-        multiplierPriceElement.innerHTML = donutMaker.getMultiplierCost();
-        purchasedMultipliersElement.innerHTML = donutMaker.getMultipliersNumber();
-        autoClickerPriceElement.innerHTML = donutMaker.getAutoClickerCost();
-        purchasedAutoClickersElement.innerHTML = donutMaker.getAutoClickersNumber();
+        updateMultiplierFields();
+        updateAutoClickerFields();
     })
 
 }
@@ -115,22 +79,40 @@ function run() {
         donutMaker.startAutoClicking();
         madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
 
-        if (donutMaker.getClicksNumber() >= donutMaker.getAutoClickerCost()) {
-            enableBtn("purchaseAutoClickerButton")
-        }
+        checkAutoClickerCapacity();
+        checkMultiplierCapacity();
 
-        if (donutMaker.getClicksNumber() < donutMaker.getAutoClickerCost()) {
-            disableBtn("purchaseAutoClickerButton")
-        }
-
-        if (donutMaker.getClicksNumber() >= donutMaker.getMultiplierCost()) {
-            enableBtn("purchaseMultiplierButton")
-        }
-
-        if (donutMaker.getClicksNumber() < donutMaker.getMultiplierCost()) {
-            disableBtn("purchaseMultiplierButton")
-        }
     }, 1000);
 }
 
+function checkAutoClickerCapacity() {
+    if (donutMaker.getClicksNumber() >= donutMaker.getAutoClickerCost()) {
+        enableBtn("purchaseAutoClickerButton");
+    }
 
+    if (donutMaker.getClicksNumber() < donutMaker.getAutoClickerCost()) {
+        disableBtn("purchaseAutoClickerButton");
+    }
+}
+
+function checkMultiplierCapacity() {
+    if (donutMaker.getClicksNumber() >= donutMaker.getMultiplierCost()) {
+        enableBtn("purchaseMultiplierButton");
+    }
+
+    if (donutMaker.getClicksNumber() < donutMaker.getMultiplierCost()) {
+        disableBtn("purchaseMultiplierButton");
+    }
+}
+
+function updateMultiplierFields() {
+    madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
+    purchasedMultipliersElement.innerHTML = donutMaker.getMultipliersNumber();
+    multiplierPriceElement.innerHTML = donutMaker.getMultiplierCost();
+}
+
+function updateAutoClickerFields() {
+    madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
+    purchasedAutoClickersElement.innerHTML = donutMaker.getAutoClickersNumber();
+    autoClickerPriceElement.innerHTML = donutMaker.getAutoClickerCost();
+}
