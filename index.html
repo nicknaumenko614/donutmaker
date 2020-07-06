@@ -1,150 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Donut Maker</title>
-    <link rel="stylesheet" href="src\css\style.css" />
+    <link rel="stylesheet" href="src\css\style.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Modak&display=swap" rel="stylesheet">
-  </head>
-  <div class="container">
+</head>
+<div class="container">
     <body>
-      <link src="src\css\style.css" />
+    <link src="src\css\style.css"/>
 
-      <header>
+    <header>
         <div class="header-text">
-          <span class="inspiration">Let's play a sweet game!</span>
-          <div class="dropdown-content">
-            <p>Inspiration for this project came from:</p>
-            <p>
-              <a href="http://orteil.dashnet.org/cookieclicker/" target="_blank"
-                >Cookie Clicker</a
-              >
-            </p>
-            <p>Arguably the greatest web browser game of all time.</p>
-          </div>
+            <span class="inspiration">Let's play a sweet game!</span>
+            <div class="dropdown-content">
+                <p>Inspiration for this project came from:</p>
+                <p>
+                    <a href="http://orteil.dashnet.org/cookieclicker/" target="_blank"
+                    >Cookie Clicker</a
+                    >
+                </p>
+                <p>Arguably the greatest web browser game of all time.</p>
+            </div>
         </div>
-      </header>
+    </header>
 
-      <div class="modals">
+    <div class="modals">
         <div class="header-modal">
-        <a href="#open-modal">About Fred the Baker Baking Company</a></div>
+            <a href="#open-modal">About Fred the Baker Baking Company</a></div>
         <div id="open-modal" class="modal-window">
-          <div>
-            <a href="#modal-close" title="Close" class="modal-close"
-              >close &times;</a
-            >
-            <h1>History</h1>
             <div>
-              Fred the Baker Baking Company was founded in July of 2020 in a
-              small basement on the East Side.
+                <a href="#modal-close" title="Close" class="modal-close"
+                >close &times;</a
+                >
+                <h1>History</h1>
+                <div>
+                    Fred the Baker Baking Company was founded in July of 2020 in a
+                    small basement on the East Side.
+                </div>
+                <h1>Products</h1>
+                <div>
+                    Using state of the art automatic donut makers and multipliers, it
+                    is able to output millions and even billions of donuts per day.
+                </div>
+                <h1>More Info</h1>
+                <div>
+                    Headquartered in Columbus, Ohio, Fred is open to investment
+                    opportunities. Please email us
+                    <a href="mailto:carswithcharacter614@gmail.com">here. </a>
+
+                </div>
             </div>
-            <h1>Products</h1>
-            <div>
-              Using state of the art automatic donut makers and multipliers, it
-              is able to output millions and even billions of donuts per day.
-            </div>
-            <h1>More Info</h1>
-            <div>
-              Headquartered in Columbus, Ohio, Fred is open to investment
-              opportunities. Please email us
-              <a href="mailto:carswithcharacter614@gmail.com">here. </a>
-            
-            </div>
-          </div>
         </div>
 
         <div class="header-modal">
-        <a href="#open-modal1">About Developer</a></div>
+            <a href="#open-modal1">About Developer</a></div>
         <div id="open-modal1" class="modal-window">
-          <div>
-            <a href="#modal-close" title="Close" class="modal-close"
-              >close &times;</a
-            >
-            <h1>About Developer</h1>
             <div>
-              <p>Created by Nick naumenko</p>
-              <p>
-                <a href="mailto:carswithcharacter614@gmail.com"
-                  >Contact via E-mail
-                </a>
-              </p>
-              <p>
-                <a href="https://github.com/nicknaumenko614" target="_blank">
-                  Check out some of my work on GitHub
-                </a>
-              </p>
-              <a href="https://nicknaumenko614.github.io/" target="_blank">
-                Check out my portfolio
-              </a>
-            
+                <a href="#modal-close" title="Close" class="modal-close"
+                >close &times;</a
+                >
+                <h1>About Developer</h1>
+                <div>
+                    <p>Created by Nick naumenko</p>
+                    <p>
+                        <a href="mailto:carswithcharacter614@gmail.com"
+                        >Contact via E-mail
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://github.com/nicknaumenko614" target="_blank">
+                            Check out some of my work on GitHub
+                        </a>
+                    </p>
+                    <p><a href="https://nicknaumenko614.github.io/" target="_blank">
+                        Check out my portfolio
+                    </a></p>
+
+                </div>
             </div>
-          </div>
         </div>
-      </div>
+    </div>
 
-      <div class="buttons">
+    <div class="buttons">
         <section class="auto-click">
-          <button
-            id="purchaseAutoClickerButton"
-            class="button"
-            type="button"
-            disabled
-          >
-            Purchase an Auto Clicker
-          </button>
+            <button
+                    id="purchaseAutoClickerButton"
+                    class="button"
+                    type="button"
+                    disabled
+            >
+                Purchase an Auto Clicker
+            </button>
 
-          <p>
-            Number of purchased auto clickers:
-            <a id="purchasedAutoClickers" class="number-of-auto-clicks">0</a>
-          </p>
-          <p>
-            Price of auto clicker:
-            <a id="autoClickerPrice" class="auto-clicker-price">0</a>
-          </p>
+            <p>
+                Number of purchased auto clickers:
+                <a id="purchasedAutoClickers" class="number-of-auto-clicks">0</a>
+            </p>
+            <p>
+                Price of auto clicker:
+                <a id="autoClickerPrice" class="auto-clicker-price">0</a>
+            </p>
         </section>
 
 
         <section class="click-make-donut">
-          <button id="makeDonutButton" class="make-donut-button" type="button">
-            Make Donuts
-          </button>
-          <p>
-            Number of made donuts:
-            <a id="madeDonuts" class="number-of-donuts">0</a>
-          </p>
+            <button id="makeDonutButton" class="make-donut-button" type="button">
+                Make Donuts
+            </button>
+            <p>
+                Number of made donuts:
+                <a id="madeDonuts" class="number-of-donuts">0</a>
+            </p>
         </section>
 
         <section class="click-multiply">
-          <button
-            id="purchaseMultiplierButton"
-            class="button"
-            type="button"
-            disabled
-          >
-            Purchase a Donut Multiplier
-          </button>
-          <p>
-            Number of multipliers purchused:
-            <a id="purchasedMultipliers" class="number-of-click-multipliers"
-              >0</a
+            <button
+                    id="purchaseMultiplierButton"
+                    class="button"
+                    type="button"
+                    disabled
             >
-          </p>
-          <p>
-            Price of multiplier:
-            <a id="multiplierPrice" class="multiplier-price">0</a>
-          </p>
+                Purchase a Donut Multiplier
+            </button>
+            <p>
+                Number of multipliers purchused:
+                <a id="purchasedMultipliers" class="number-of-click-multipliers"
+                >0</a
+                >
+            </p>
+            <p>
+                Price of multiplier:
+                <a id="multiplierPrice" class="multiplier-price">0</a>
+            </p>
         </section>
-      </div>
+    </div>
 
-      <div class="reset">
+    <div class="reset">
         <button id="resetAllButton" class="reset-all" type="button">
-          Reset Game
+            Reset Game
         </button>
-      </div>
+    </div>
 
-      <script src="./src/js/DonutMaker.js" type="module"></script>
-      <script src="./src/js/App.js" type="module"></script>
+    <script src="./src/js/DonutMaker.js" type="module"></script>
+    <script src="./src/js/App.js" type="module"></script>
     </body>
-  </div>
+</div>
 </html>
