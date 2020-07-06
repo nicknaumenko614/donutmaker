@@ -48,7 +48,7 @@ class DonutMaker {
         this.clicksNumber = 0;
         this.autoClickerCost = 100;
         this.autoClickersNumber = 0;
-        this.multiplierCost = 100;
+        this.multiplierCost = 10;
         this.multipliersNumber = 0;
     }
 
