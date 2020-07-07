@@ -93,10 +93,6 @@ body {
     bottom: 3px;
 }
 
-button .reset-all {
-    background-color: teal;
-}
-
 
 .modal-window {
     position: fixed;
@@ -186,10 +182,6 @@ header {
 
 }
 
-.header-modal {
-
-
-}
 
 .reset {
     text-align: center;

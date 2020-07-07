@@ -23,7 +23,7 @@ function initClickerButton() {
 
     donutMakerClickerButton.addEventListener('click', () => {
         donutMaker.makeDonut();
-        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
+        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber().toFixed(0);
 
         checkAutoClickerCapacity();
 
@@ -77,7 +77,7 @@ function disableBtn(buttonElementId) {
 function run() {
     window.setInterval(() => {
         donutMaker.startAutoClicking();
-        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
+        madeDonutsNumberElement.innerText = donutMaker.getClicksNumber().toFixed(0);
 
         checkAutoClickerCapacity();
         checkMultiplierCapacity();
@@ -100,19 +100,19 @@ function checkMultiplierCapacity() {
         enableBtn("purchaseMultiplierButton");
     }
 
-    if (donutMaker.getClicksNumber() < donutMaker.getMultiplierCost()) {
+    else{
         disableBtn("purchaseMultiplierButton");
     }
 }
 
 function updateMultiplierFields() {
-    madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
+    madeDonutsNumberElement.innerText = donutMaker.getClicksNumber().toFixed(0);
     purchasedMultipliersElement.innerHTML = donutMaker.getMultipliersNumber();
     multiplierPriceElement.innerHTML = donutMaker.getMultiplierCost();
 }
 
 function updateAutoClickerFields() {
-    madeDonutsNumberElement.innerText = donutMaker.getClicksNumber();
+    madeDonutsNumberElement.innerText = donutMaker.getClicksNumber().toFixed(0);
     purchasedAutoClickersElement.innerHTML = donutMaker.getAutoClickersNumber();
     autoClickerPriceElement.innerHTML = donutMaker.getAutoClickerCost();
 }

@@ -7,7 +7,7 @@ class DonutMaker {
     }
 
     makeDonut() {
-        this.clicksNumber += Math.round(1 * this.calculateMultiplier());
+        this.clicksNumber += this.calculateMultiplier();
     }
 
     calculateMultiplier() {
