@@ -90,7 +90,7 @@ function checkAutoClickerCapacity() {
         enableBtn("purchaseAutoClickerButton");
     }
 
-    if (donutMaker.getClicksNumber() < donutMaker.getAutoClickerCost()) {
+    else {
         disableBtn("purchaseAutoClickerButton");
     }
 }

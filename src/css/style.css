@@ -5,7 +5,8 @@ body {
 .container {
     box-sizing: border-box;
     height: 98vh;
-
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: larger;
 
 }
 
